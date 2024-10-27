@@ -82,3 +82,13 @@ def absoluteDifference(arr):
     primary_diagonal = sum(arr[i][i] for i in range(len(arr)))
     secondary_diagonal = sum(arr[i][len(arr) - 1 - i] for i in range(len(arr)))
     return abs(primary_diagonal - secondary_diagonal)
+
+def countingSort(arr):
+    """
+    Count the number of times each value appears in a given array of integers
+
+    :param arr: List[int] - an array of integers
+    :return: List[int] - a frequency array of size 100
+    """
+    return [sum(1 for x in arr if x == i) for i in range(100)]
+
