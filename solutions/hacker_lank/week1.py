@@ -1,4 +1,7 @@
 
+from typing import List
+
+
 def minusPlus(arr):
     """
     Calculates and prints the fractions of positive, negative, and zero elements in the given array.
@@ -102,3 +105,13 @@ def pangram(s):
     alphabet = set('abcdefghijklmnopqrstuvwxyz')
     return "pangram" if alphabet <= set(s.lower()) else "not pangram"
 
+def permuteArray(k: int, A: List[int], B: List[int]) -> str:
+    """
+    Permute arrays A and B into A' and B' such that A'[i] + B'[i] >= k
+
+    :param k: int - an integer between 0 and 10^9
+    :param A: List[int] - an array of integers of n size
+    :param B: List[int] - an array of integers of n size
+    :return: str - YES if the relation exists. NO otherwise
+    """
+    return "YES" if all(a + b >= k for a, b in zip(sorted(A), sorted(B, reverse=True))) else "NO"
