@@ -70,3 +70,15 @@ def flippingBits(n):
     which is 4294967294
     """
     return n ^ 0xFFFFFFFF
+
+
+def absoluteDifference(arr):
+    """
+    Calculate the absolute difference between the sums of a given matrix diagonals.
+
+    :param arr: List[int] - an N x M array of integers / an N x M matrix
+    :return: int - the absolute diagonal difference 
+    """
+    primary_diagonal = sum(arr[i][i] for i in range(len(arr)))
+    secondary_diagonal = sum(arr[i][len(arr) - 1 - i] for i in range(len(arr)))
+    return abs(primary_diagonal - secondary_diagonal)
