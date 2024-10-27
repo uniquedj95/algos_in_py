@@ -51,3 +51,22 @@ def timeConversion(s):
         hh = (hh % 12) + 12
 
     return f"{hh:02d}:{mm:02d}:{ss:02d}"
+
+def flippingBits(n):
+    """
+    This function takes a 32-bit unsigned integer and flips all the bits (i.e., changes 1s to 0s and 0s to 1s).
+
+    :param n: int - a long integer to be flipped
+    :return: int - the flipped long integer
+
+    Example:
+    >>> flippingBits(1)
+    4294967294
+    >>> flippingBits(4294967294)
+    1
+
+    Explanation:
+    Unsigned 32-bits of 1 is 00000000000000000000000000000001. when flipped is 11111111111111111111111111111110
+    which is 4294967294
+    """
+    return n ^ 0xFFFFFFFF
