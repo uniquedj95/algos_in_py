@@ -92,3 +92,13 @@ def countingSort(arr):
     """
     return [sum(1 for x in arr if x == i) for i in range(100)]
 
+def pangram(s):
+    """
+    Determine if a given string is a Pangram or Not. A Pangram is a string that contains every letter of the alphabet.
+
+    :param s: str - A string to be checked
+    :return: str - pangram OR not pangram
+    """
+    alphabet = set('abcdefghijklmnopqrstuvwxyz')
+    return "pangram" if alphabet <= set(s.lower()) else "not pangram"
+
