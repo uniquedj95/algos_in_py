@@ -115,3 +115,14 @@ def permuteArray(k: int, A: List[int], B: List[int]) -> str:
     :return: str - YES if the relation exists. NO otherwise
     """
     return "YES" if all(a + b >= k for a, b in zip(sorted(A), sorted(B, reverse=True))) else "NO"
+
+def subArrayDivision(s: List[int], d: int, m: int) -> int:
+    """
+    Calculate the number of ways to divide an array into contigous sub arrays of length m which sums to d
+
+    :param s: List[int] - an array of integers
+    :param d: int - an integer representing the sum of the sub arrays
+    :param m: int - an integer representing the length of the sub arrays
+    :return: int - the number of ways the given array can be divided
+    """
+    return sum(1 for i in range(len(s) - m + 1) if sum(s[i:i + m]) == d)
