@@ -126,3 +126,20 @@ def subArrayDivision(s: List[int], d: int, m: int) -> int:
     :return: int - the number of ways the given array can be divided
     """
     return sum(1 for i in range(len(s) - m + 1) if sum(s[i:i + m]) == d)
+
+def longestSubString(s: str) -> int:
+    """
+    Find the length of the longest substring of a given string without repeating characters
+
+    :param s: str - a string of length n
+    :return: int - the length of the longest substring
+    """
+    longest = 0
+    start = 0
+    seen = {}
+    for i, char in enumerate(s):
+        if char in seen:
+            start = max(start, seen[char] + 1)
+        seen[char] = i
+        longest = max(longest, i - start + 1)
+    return longest
